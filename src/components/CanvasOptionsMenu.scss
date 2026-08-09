@@ -1,0 +1,249 @@
+#canvas-options-dialog {
+    padding: 0;
+    border: none;
+    width: 80%;
+    height: 80%;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    position: relative;
+
+    >div {
+        flex-direction: column;
+        display: flex;
+        height: 100%;
+        width: 100%;
+
+        #canvas-options-menu-header {
+            background-color: hsl(0, 0%, 15%);
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid hsl(0, 0%, 61%);
+
+            button {
+                border-radius: 0.5rem;
+                border: none;
+                background-color: hsl(0, 32%, 52%);
+                color: white;
+                font-size: 1rem;
+                cursor: pointer;
+                border: 1px solid hsl(0, 100%, 17%);
+
+                &:hover {
+                    background-color: hsl(219, 50%, 60%);
+                }
+            }
+
+            >div:first-child {
+                display: flex;
+                height: 100%;
+                justify-content: center;
+
+                button {
+                    background-color: hsl(0, 0%, 15%);
+                    border: none;
+                }
+            }
+        }
+
+        #canvas-options-menu {
+            display: flex;
+            flex-direction: row;
+            background-color: hsl(0, 0%, 20%);
+            color: white;
+            font-family: Arial, sans-serif;
+            height: auto;
+            flex: 1;
+            display: flex;
+            min-height: 0;
+
+            div#canvas-options-menu-lateral-bar {
+                display: flex;
+                flex-direction: column;
+                width: 200px;
+                background-color: hsl(0, 0%, 15%);
+                height: 100%;
+                justify-content: space-between;
+
+                div#canvas-options-menu-lateral-bar-titles {
+                    padding: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+
+                    h2 {
+                        margin: 0;
+                        font-size: 1.2rem;
+                        cursor: pointer;
+                        transition: color 0.3s;
+
+                        &:hover {
+                            color: hsl(0, 0%, 50%);
+                        }
+                    }
+
+                }
+
+                button {
+                    margin: 20px;
+                    border-radius: 0.5rem;
+                    border: none;
+                    background-color: hsl(219, 50%, 50%);
+                    color: white;
+                    font-size: 1rem;
+                    cursor: pointer;
+                    justify-self: end;
+
+                    &:hover {
+                        background-color: hsl(219, 50%, 60%);
+                    }
+                }
+            }
+
+            div#canvas-options-menu-content {
+                flex-grow: 1;
+                padding: 1rem;
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                height: 100%;
+
+                overflow-y: auto;
+
+                >div {
+                    background-color: hsl(0, 0%, 25%);
+                    padding: 1rem;
+                    border-radius: 0.5rem;
+
+                    /* h3 {
+                        margin-top: 0;
+                        font-size: 1.1rem;
+                        }
+                        
+                        p {
+                            font-size: 0.9rem;
+                            line-height: 1.4;
+                            }
+                            
+                            input[type="text"],
+                            input[type="number"] {
+                                padding: 0.5rem;
+                                width: 300px;
+                                border-radius: 0.5rem;
+                                border: none;
+                                font-size: 1rem;
+                                }
+                                
+                                select {
+                                    padding: 0.5rem;
+                                    width: 300px;
+                                    border-radius: 0.5rem;
+                                    border: none;
+                                    font-size: 1rem;
+                                    }
+                                    
+                                    button {
+                                        padding: 0.5rem 1rem;
+                                        border-radius: 0.5rem;
+                                        border: none;
+                                        background-color: hsl(219, 50%, 50%);
+                                        color: white;
+                                        font-size: 1rem;
+                                        cursor: pointer;
+                                        
+                    &:hover {
+                        background-color: hsl(219, 50%, 60%);
+                        }
+                        } */
+                }
+            }
+        }
+    }
+}
+
+#canvas-options-menu-share-section {
+
+    >div {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+
+        >div.text-input-container {
+            flex-grow: 1;
+        }
+
+        button {
+            background-color: hsl(219, 50%, 50%);
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            cursor: pointer;
+
+            &:hover {
+                background-color: hsl(219, 50%, 60%);
+            }
+        }
+    }
+
+    div#canvas-options-menu-share-section-server-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px dashed hsl(0, 0%, 61%);
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 1rem;
+
+        >span {
+            margin: 0.5rem 1rem;
+            font-size: 1.2rem;
+        }
+
+        >div {
+            display: flex;
+            flex-direction: row;
+            margin: 0 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+
+
+            >div {
+                flex-grow: 1;
+                display: flex;
+                flex-direction: column;
+
+                >button {
+                    background-color: hsl(219, 50%, 50%);
+                    color: white;
+                    position: relative;
+                    >span {
+                        position: absolute;
+                        background-color: hsl(0, 69%, 49%);
+                        color: white;
+                        text-align: center;
+                        border-radius: 50%;
+                        padding: 0.2rem 0.5rem;
+                        margin-left: 0.5rem;
+                        top: 0;
+                        right: 0;
+                        translate: 50% -50%;
+                    }
+                }
+            }
+
+            svg {
+                padding: 1rem;
+                background-color: hsl(0, 0%, 100%);
+                height: 250px;
+                width: auto;
+                margin: 1rem;
+                border-radius: 1rem;
+                box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
+            }
+        }
+    }
+}

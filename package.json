@@ -1,0 +1,35 @@
+{
+  "name": "physdraw",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev:web": "vite --host --mode web --port 1421",
+    "dev:tauri": "tauri dev",
+    "build:web": "tsc && vite build --mode web",
+    "build:tauri": "tsc && vite build --mode tauri && tauri build",
+    "preview": "vite preview",
+    "tauri": "tauri"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2",
+    "@tauri-apps/plugin-fs": "^2.5.1",
+    "@tauri-apps/plugin-opener": "^2",
+    "konva": "^10.3.0",
+    "peerjs": "^1.5.5",
+    "qrcode.react": "^4.2.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-konva": "^19.2.5"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-decorators": "^8.0.2",
+    "@tauri-apps/cli": "^2",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^4.6.0",
+    "sass-embedded": "^1.100.0",
+    "typescript": "~5.8.3",
+    "vite": "^7.0.4"
+  }
+}

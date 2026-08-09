@@ -1,0 +1,187 @@
+div.text-input-container {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    gap: 0.5rem;
+
+    label {
+        font-size: 1rem;
+        color: hsl(0, 0%, 97%);
+    }
+
+    input[type="text"] {
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        border: none;
+        font-size: 1rem;
+        width: auto;
+    }
+}
+
+div.copy-input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 1rem;
+
+    label {
+        font-size: 1rem;
+        color: hsl(0, 0%, 97%);
+    }
+
+    input[type="text"] {
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        border: none;
+        font-size: 1rem;
+        width: auto;
+        cursor: pointer;
+        user-select: none;
+        outline: none;
+        border: 2px solid transparent;
+        &::selection {
+            background: transparent;
+        }
+
+        &:focus {
+            animation: greenFadeOut 0.5s forwards;
+        }
+    }
+}
+@keyframes greenFadeOut {
+  0% {
+    border-color: #2ecc71; /* Começa verde */
+  }
+  100% {
+    border-color: transparent; /* Termina transparente após 0.5s */
+  }
+}
+
+div.tag-input-component {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .tag-input-label {
+        font-size: 0.95rem;
+        color: hsl(0, 0%, 97%);
+    }
+
+    div.tag-input-component-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        align-items: center;
+        padding: 0.6rem 0.75rem;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.06);
+        backdrop-filter: blur(6px);
+
+        button.tag {
+            display: inline-flex;
+            align-items: center;
+            max-width: fit-content;
+            padding: 0.35rem 0.7rem;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.14);
+            color: hsl(0, 0%, 97%);
+            font-size: 0.9rem;
+            line-height: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            transition: padding-right 140ms ease;
+
+            .tag-label {
+                display: inline-block;
+                padding-right: 0.2rem;
+            }
+
+            .tag-remove {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 0;
+                height: 1.1rem;
+                padding: 0;
+                margin-left: 0;
+                border: none;
+                border-radius: 50%;
+                background: transparent;
+                color: hsl(0, 0%, 75%);
+                cursor: pointer;
+                opacity: 0;
+                transform: translateX(-0.25rem);
+                transition: width 140ms ease, opacity 140ms ease, transform 140ms ease, color 140ms ease;
+                font-size: 0.95rem;
+                line-height: 1;
+                overflow: hidden;
+            }
+
+            &:hover,
+            &:focus-within {
+                padding-right: 0.35rem;
+
+                .tag-remove {
+                    width: 1.1rem;
+                    opacity: 1;
+                    transform: translateX(0);
+                    color: hsl(0, 0%, 97%);
+                }
+            }
+        }
+
+        label.tag-add {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 1.9rem;
+            padding: 0 0.4rem;
+            border-radius: 999px;
+            border: 1px dashed rgba(255, 255, 255, 0.24);
+            background: transparent;
+            cursor: text;
+            transition: border-color 120ms ease, background-color 120ms ease;
+
+            .tag-add-icon {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 1.1rem;
+                height: 1.1rem;
+                font-size: 1rem;
+                line-height: 1;
+                color: hsl(0, 0%, 80%);
+                transition: opacity 120ms ease, transform 120ms ease;
+            }
+
+            .tag-input {
+                width: 0;
+                min-width: 0;
+                padding: 0;
+                border: none;
+                outline: none;
+                background: transparent;
+                color: hsl(0, 0%, 97%);
+                font-size: 0.95rem;
+                opacity: 0;
+                transition: width 160ms ease, opacity 120ms ease;
+            }
+
+            &:focus-within {
+                border-color: hsl(200, 90%, 65%);
+                background: rgba(255, 255, 255, 0.08);
+
+                .tag-add-icon {
+                    opacity: 0;
+                    transform: scale(0.8);
+                }
+
+                .tag-input {
+                    width: 7.5rem;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
