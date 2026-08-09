@@ -104,7 +104,7 @@ export function CanvasOptionsMenu({ open, closeModal }: CanvasOptionsMenuProps) 
                 <div id="canvas-options-menu-header">
                     <div>
                         <button onClick={() => {
-                            if (AppMenu.SavingActivePaperTimer) clearTimeout(AppMenu.SavingActivePaperTimer)
+                            if (AppMenu.SavingActivePaperTimer) clearTimeout(AppMenu.SavingActivePaperTimer);
                             AppMenu.saveActivePaper().then(() => {
                                 LocationManager.goMenu();
                             }).catch((err) => {
