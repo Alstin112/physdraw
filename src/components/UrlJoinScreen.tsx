@@ -14,10 +14,15 @@ export function UrlJoinScreen() {
             <button disabled={username.length < 3} onClick={() => {
                 setError(false);
                 setMessage("Loading...");
-                AppMenu.network.connectToServer(AppMenu.urlJoinId!).catch((err) => {
+                AppMenu.network.connectToServer(AppMenu.urlJoinId!)
+                .catch((err) => {
                     console.error("Error connecting to server:", err);
                     setError(true);
                     setMessage("Failed to connect to server. Please check the link and try again.");
+                })
+                .then(() => {
+                    AppMenu.urlJoinId = null;
+                    setMessage("You should be connected now. If you don't see the paper, please report this issue.");
                 });
             }}>Join</button>
         </div>
