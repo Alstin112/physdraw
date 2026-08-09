@@ -10,7 +10,7 @@ export class FileManager {
         const root = await navigator.storage.getDirectory();
         const dirHandle = await root.getDirectoryHandle("papers", { create: true });
         const files: PaperFile[] = [];
-        for await (const entry of dirHandle.values()) {
+        for await (const entry of (dirHandle as any).values()) {
             if(entry.kind === "file" && entry.name.endsWith(".infcanvas")) {
                 const paperId = entry.name.replace(".infcanvas", "");
                 const paperFile = await FileManager.loadPaperById(paperId);
@@ -49,7 +49,7 @@ export class FileManager {
 
             const tauriStream = file.slice(4 + metadataLength).stream();
             await paperFile.readFromStream(
-                    tauriStream.pipeThrough(new DecompressionStream('deflate'))
+                    tauriStream.pipeThrough(new DecompressionStream('deflate')) as ReadableStream<Uint8Array<ArrayBuffer>>
             )
 
             return paperFile;

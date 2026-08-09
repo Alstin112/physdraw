@@ -74,7 +74,7 @@ export class FileManager {
                     await activeFile.close();
                 },
             });
-            await paperFile.readFromStream(tauriStream.pipeThrough(new DecompressionStream('deflate')))
+            await paperFile.readFromStream(tauriStream.pipeThrough(new DecompressionStream('deflate')) as ReadableStream<Uint8Array<ArrayBuffer>>);
             return paperFile;
         } catch (error) {
             console.error("Error reading file:", error);

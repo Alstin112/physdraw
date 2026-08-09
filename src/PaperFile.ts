@@ -112,10 +112,10 @@ export class FullPaperFile extends PaperFile {
         const cs = new CompressionStream('deflate');
         
         const writer = cs.writable.getWriter();
-        writer.write(this.writeToUint8Array());
-        writer.close();
+        await writer.write(this.writeToUint8Array());
+        await writer.close();
 
-        return cs.readable;
+        return cs.readable as ReadableStream<Uint8Array<ArrayBuffer>>;
     }
 
     readFromBuffer(buffer: ArrayBuffer) {
